@@ -3,6 +3,15 @@ Python wrapper to download files from NVONLINE (partners.nvidia.com) without bro
 
 Example usage:
 
+First, install dependencies:
+
+```bash
+python3 -m pip install -r requirements.txt
+apt install -y aria2
+```
+
+Then save the following file as `get_links.py`:
+
 ```python
 import nvonline
 async with nvonline.NvOnline("name@company.domain", "myPAssw0rD") as cli:
@@ -13,11 +22,11 @@ async with nvonline.NvOnline("name@company.domain", "myPAssw0rD") as cli:
                 print(link)
 ```
 
-Save the above file as `get_links.py`, then:
+Generate download links and use Aria2 to download them:
 
 ```bash
 python3 get_links.py >links.txt
-aria2c --input-file=links.txt  # Run `apt install aria2` if you don't have it
+aria2c --input-file=links.txt
 ```
 
 All files will be downloaded to the current directory.
