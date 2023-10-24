@@ -1,5 +1,6 @@
 # pynvonline
-Python wrapper to download files from NVONLINE (partners.nvidia.com) without browser
+
+Python wrapper to download files from NVONLINE (partners.nvidia.com) without browser.
 
 Example usage:
 
