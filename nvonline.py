@@ -11,7 +11,7 @@ class NvOnline:
         self._password = password
         self._prefix = "https://partners.nvidia.com"
         self._cookies = httpx.Cookies()
-        self._client = httpx.AsyncClient(cookies=self._cookies)
+        self._client = httpx.AsyncClient(cookies=self._cookies, timeout=60)
 
     async def __aenter__(self):
         self._cookies.clear()
